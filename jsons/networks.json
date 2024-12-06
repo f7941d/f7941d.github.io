@@ -1,1 +1,281 @@
-
+{
+  "Eiehvxvdj": {
+    "passwords": ["\"qwerty12\""],
+    "discovered": ["UNKNOWN", "QPQCR8BE"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "?": {
+    "passwords": ["\"NotAmongUs\"", "\"GCMP\""],
+    "discovered": ["UNKNOWN", "QPQCR8BE", "OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "IMS_GUESTS": {
+    "passwords": ["\"9i)Ya+2<zKvT\"", "\"9i)Ya 2<zKvT\""],
+    "discovered": ["UNKNOWN", "QPQCR8BE", "I57EECNK", "OE1M14PL"],
+    "checked": {
+      "status": true,
+      "current_password": "\"9i)Ya+2<zKvT\"",
+      "date": "12/06/24"
+    }
+  },
+  "Panos' iPhone": {
+    "passwords": ["not found on the system"],
+    "discovered": ["UNKNOWN", "OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Ahshs": {
+    "passwords": ["\"aaaaaaaa\""],
+    "discovered": ["UNKNOWN", "I57EECNK", "OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Galaxy S24+ EB90": {
+    "passwords": ["\"ye96ag2fc9qtft2\""],
+    "discovered": ["UNKNOWN"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "the better jesus christ": {
+    "passwords": ["\"not_fal5e\"", "\"GCMP\""],
+    "discovered": ["UNKNOWN", "QPQCR8BE", "I57EECNK"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Rizzmarck Central": {
+    "passwords": ["\"somethingsomething\""],
+    "discovered": ["UNKNOWN", "QPQCR8BE"],
+    "checked": {
+      "status": false,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "ARRIS-DBD9-5G": {
+    "passwords": ["\"597968253125B33B\""],
+    "discovered": ["UNKNOWN"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Cafeterra": {
+    "passwords": ["\"cafeterra\""],
+    "discovered": ["UNKNOWN"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Redmi 10 2022": {
+    "passwords": ["\"aaaaaaaa\""],
+    "discovered": ["UNKNOWN", "QPQCR8BE"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Galaxy A42 5GB5C4": {
+    "passwords": ["\"12345678\"", "\"11223344\""],
+    "discovered": ["UNKNOWN", "QPQCR8BE", "I57EECNK", "OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "??": {
+    "passwords": ["\"gamotonpoli\"", "\"fuckyourmother\""],
+    "discovered": ["UNKNOWN", "QPQCR8BE", "I57EECNK"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Galaxy A512383": {
+    "passwords": ["\"thenonoyes\"", "\"theyesyesno\""],
+    "discovered": ["UNKNOWN", "I57EECNK", "OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Timofey's phone ": {
+    "passwords": ["\"12345678\"", "\"123456788\""],
+    "discovered": ["UNKNOWN", "QPQCR8BE"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "ANDREAS2": {
+    "passwords": ["\"1122334455\""],
+    "discovered": ["UNKNOWN", "I57EECNK", "OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Hotspot": {
+    "passwords": ["\"qwerty12\""],
+    "discovered": ["QPQCR8BE", "OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "The People's Socialist Network": {
+    "passwords": ["\"vdur7002\""],
+    "discovered": ["QPQCR8BE", "OE1M14PL"],
+    "checked": {
+      "status": true,
+      "current_password": "\"vdur7002\"",
+      "date": "12/06/24"
+    }
+  },
+  "Galaxy S24  EB90": {
+    "passwords": ["\"ye96ag2fc9qtft2\""],
+    "discovered": ["QPQCR8BE"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "CCP HOTSPOT!!!!????????": {
+    "passwords": ["\"aaaaaaaa\""],
+    "discovered": ["QPQCR8BE"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "HUAWEI P30 lite": {
+    "passwords": ["\"1133557799\""],
+    "discovered": ["QPQCR8BE", "I57EECNK", "OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Not": {
+    "passwords": ["\"NotPassword\""],
+    "discovered": ["I57EECNK"],
+    "checked": {
+      "status": true,
+      "current_password": "\"NotPassword\"",
+      "date": "12/06/24"
+    }
+  },
+  "(12345678)": {
+    "passwords": ["\"12345678\""],
+    "discovered": ["I57EECNK"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "iPhone Anton": {
+    "passwords": ["\"ak123456\""],
+    "discovered": ["I57EECNK"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "swear some happened at tiananmen": {
+    "passwords": ["\"eindhoven\""],
+    "discovered": ["I57EECNK"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Mi 9T": {
+    "passwords": ["\"88888888\""],
+    "discovered": ["I57EECNK", "OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Varu's Iphone": {
+    "passwords": ["not found on the system"],
+    "discovered": ["OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "ddddqqqq111": {
+    "passwords": ["\"danielpidor\""],
+    "discovered": ["OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "iPhone": {
+    "passwords": ["\"miamuppet\""],
+    "discovered": ["OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Davidspot": {
+    "passwords": ["\"Maxmaxmax\""],
+    "discovered": ["OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  },
+  "Kir's 12 mini": {
+    "passwords": ["not found on the system"],
+    "discovered": ["OE1M14PL"],
+    "checked": {
+      "status": null,
+      "current_password": null,
+      "date": "12/06/24"
+    }
+  }
+}

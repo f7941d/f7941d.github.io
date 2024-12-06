@@ -1,0 +1,30 @@
+{
+  "UNKNOWN": {
+    "manufacturer": "HUAWEI",
+    "model": "NBLK-WAX9X",
+    "os": "Microsoft Windows 10 Home",
+    "host": "LAPTOP-UNKNOWN",
+    "discovered": 16
+  },
+  "QPQCR8BE": {
+    "manufacturer": "HUAWEI",
+    "model": "NBLK-WAX9X",
+    "os": "Microsoft Windows 11 Home",
+    "host": "LAPTOP-QPQCR8BE",
+    "discovered": 14
+  },
+  "I57EECNK": {
+    "manufacturer": "HUAWEI",
+    "model": "NBLK-WAX9X",
+    "os": "Microsoft Windows 10 Home",
+    "host": "LAPTOP-I57EECNK",
+    "discovered": 13
+  },
+  "OE1M14PL": {
+    "manufacturer": "HUAWEI",
+    "model": "NBLK-WAX9X",
+    "os": "Microsoft Windows 10 Home",
+    "host": "LAPTOP-OE1M14PL",
+    "discovered": 16
+  }
+}

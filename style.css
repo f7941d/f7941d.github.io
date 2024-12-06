@@ -41,28 +41,91 @@ h1 {
 }
 
 h2 {
+  width: fit-content;
   word-break: normal;
-  font-weight: 600;
+  font-weight: 800;
   font-size: 1.2rem;
 }
 
+.boxes-list h2 {
+  transition: color 0.2s;
+  cursor: copy;
+}
+
+.boxes-list h2:hover {
+  color: #f7941d;
+}
+
 p {
+  width: fit-content;
   font-weight: 400;
   font-size: 1rem;
   color: hsl(0, 0%, 90%);
 }
 
+.password {
+  transition: color 0.2s;
+  cursor: copy;
+}
+
+.boxes-list .password:hover {
+  color: #f7941d;
+}
+
 .correct {
   font-weight: 600;
-  font-size: 1.1rem;
 }
 
 .incorrect {
-  font-weight: 300;
-  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .info {
   font-family: Inter, sans-serif;
   line-height: 1.6;
+}
+
+pre {
+  cursor: copy;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #1f1f1f;
+  width: fit-content;
+  border-radius: 0.52rem;
+  margin: 0.25rem 0;
+}
+
+@keyframes copyBanner {
+  0% {
+    opacity: 0;
+    transform: translateX(20rem);
+  }
+  12.5% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  87.5% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20rem);
+  }
+}
+
+#copy-banner {
+  animation: none;
+  opacity: 0;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #1f1f1f;
+  width: fit-content;
+  height: fit-content;
+  font-size: 1.4rem;
+  padding: 0.5rem 0.75rem;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  border-radius: 0.5rem;
 }

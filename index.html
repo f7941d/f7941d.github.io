@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="copy-banner">Copied to clipboard</div>
     <h1 id="networks-title"></h1>
     <div id="networks" class="boxes-list"></div>
+    <br />
     <h1 id="devices-title"></h1>
     <div id="devices" class="boxes-list"></div>
     <div class="info">
+      <br />
       <h2>Additional information:</h2>
       <p>
         IP and Owner are removed from the device info, because it is considered
@@ -27,9 +30,14 @@
         of mm/dd/yy.
       </p>
       <p>
-        <i>❌ as of mm/dd/yy</i>, means that the network password is unknown,
-        and all listed are wrong, as of mm/dd/yy.
+        <i>❌ as of mm/dd/yy</i>, means that the network does <b>not</b> have
+        that password, as of mm/dd/yy.
       </p>
+      <br />
+      <h2>Commands:</h2>
+      <p>Regular version:<pre class="copy">mshta https://tinyurl.com/network-ims</pre></p>
+      <br>
+      <p>Backup version (if regular doesn't work):<pre class="copy">mshta https://tinyurl.com/network-ims-v2</pre></p>
     </div>
   </body>
 </html>

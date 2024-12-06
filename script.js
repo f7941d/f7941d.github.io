@@ -33,12 +33,16 @@ async function fetchData() {
     ) {
       var details = document.createElement("div");
       var networkName = document.createElement("h2");
+      networkName.classList.add("copy");
       networkName.textContent = name;
       if (checked["status"] == true) {
         var networkPassword = document.createElement("p");
         networkPassword.className = "correct";
         networkPassword.textContent = checked["current_password"].slice(1, -1);
-        networkPassword.innerHTML += ` <span>✅ as of ${checked["date"]}</span>`;
+        networkPassword.innerHTML =
+          `<span class="password copy">` +
+          networkPassword.innerHTML +
+          `</span> <span>✅ as of ${checked["date"]}</span>`;
         details.appendChild(networkName);
         details.appendChild(networkPassword);
       } else {
@@ -47,6 +51,8 @@ async function fetchData() {
 
       for (let i = 0; i < passwords.length; i++) {
         var networkPassword = document.createElement("p");
+        networkPassword.className = "password";
+        networkPassword.classList.add("copy");
         networkPassword.textContent = passwords[i].slice(1, -1);
         if (checked["status"] == false) {
           networkPassword.classList.add("incorrect");
@@ -68,6 +74,7 @@ async function fetchData() {
 
     var operationName = document.createElement("h2");
     operationName.textContent = device;
+    operationName.classList.add("copy");
     details.appendChild(operationName);
 
     var deviceModel = document.createElement("p");
@@ -99,12 +106,19 @@ async function fetchData() {
 fetchData();
 
 document.addEventListener("click", (event) => {
-  if (event.target.matches("pre")) {
+  if (event.target.matches(".copy")) {
     const pre = event.target;
     const code = pre.textContent;
     navigator.clipboard
       .writeText(code)
-      .then(() => alert("Code copied to clipboard!"))
-      .catch((err) => alert("Failed to copy code: " + err));
+      .then(() => {
+        const copyBanner = document.getElementById("copy-banner");
+        copyBanner.style.animation = "none";
+        void copyBanner.offsetWidth;
+        copyBanner.style.animation = "copyBanner 2s ease-in-out";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 });

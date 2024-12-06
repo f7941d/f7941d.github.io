@@ -1,1 +1,35 @@
-<h1>Hello, World!</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="/script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="networks-title"></h1>
+    <div id="networks" class="boxes-list"></div>
+    <h1 id="devices-title"></h1>
+    <div id="devices" class="boxes-list"></div>
+    <div class="info">
+      <h2>Additional information:</h2>
+      <p>
+        IP and Owner are removed from the device info, because it is considered
+        sensitive information.
+      </p>
+      <p>
+        Forgotten networks are not listed, however
+        <i>"Discovered X networks"</i> includes forgotten networks.
+      </p>
+      <p>
+        <i>✅ as of mm/dd/yy</i>, means that the network has that password, as
+        of mm/dd/yy.
+      </p>
+      <p>
+        <i>❌ as of mm/dd/yy</i>, means that the network password is unknown,
+        and all listed are wrong, as of mm/dd/yy.
+      </p>
+    </div>
+  </body>
+</html>

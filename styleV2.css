@@ -93,6 +93,8 @@ pre {
   width: fit-content;
   border-radius: 0.52rem;
   margin: 0.25rem 0;
+  max-width: 100%;
+  overflow-x: scroll;
 }
 
 @keyframes copyBanner {

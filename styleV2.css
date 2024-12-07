@@ -73,11 +73,11 @@ p {
 }
 
 .correct {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .incorrect {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .info {

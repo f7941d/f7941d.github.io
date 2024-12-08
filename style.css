@@ -36,6 +36,7 @@ h1 {
   gap: 0.5rem;
   transition: background-color 0.2s;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 #messages.boxes-list {
@@ -94,6 +95,8 @@ pre {
   width: fit-content;
   border-radius: 0.52rem;
   margin: 0.25rem 0;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 @keyframes copyBanner {

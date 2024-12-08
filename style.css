@@ -37,6 +37,7 @@ h1 {
   transition: background-color 0.2s;
   max-width: 100%;
   box-sizing: border-box;
+  overflow-x: scroll;
 }
 
 #messages.boxes-list {
@@ -97,6 +98,7 @@ pre {
   margin: 0.25rem 0;
   box-sizing: border-box;
   max-width: 100%;
+  overflow-x: scroll;
 }
 
 @keyframes copyBanner {

@@ -200,7 +200,7 @@ async function fetchData() {
         } else if (extra["unverified"][network] !== undefined) {
           networkPassword.className = "password incorrect";
         } else {
-          networkPassword.className = "password";
+          networkPassword.className = "password copy";
         }
         networkPassword.textContent = networks[network]["passwords"][password];
       } else {

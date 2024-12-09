@@ -45,7 +45,7 @@
         <li><code>netsh wlan show profile name="{name}" key=clear</code> is ran for each of the extracted networks, <code>key=clear</code> makes the password plain text</li>
         <li>The password is extracted from each one, and saved into a variable</li>
         <li><code>curl ifcfg.me</code> is ran, to get the public IP of the device (not used)</li>
-        <li><code>systeminfo</code> is ran, to get the System Manufacturer, Model, OS Name, Host Name, and Owner of the device</li>
+        <li><code>systeminfo</code> is ran, to get the System Manufacturer, Model, OS Name, Host Name, and Owner (not used) of the device</li>
         <li>Everything is saved into variable with the json syntax</li>
         <li>All info is sent using the Telegram Bot Get API</li>
         <li>The received message is uploaded to GitHub, where the website automatically updates</li>

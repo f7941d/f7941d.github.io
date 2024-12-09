@@ -37,7 +37,6 @@ h1 {
   transition: background-color 0.2s;
   max-width: 100%;
   box-sizing: border-box;
-  overflow-x: scroll;
 }
 
 #messages.boxes-list {
@@ -140,6 +139,9 @@ div.message {
   white-space: pre;
   position: relative;
   padding-bottom: 3rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: scroll;
 }
 
 .messageTime {

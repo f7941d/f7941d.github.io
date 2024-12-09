@@ -85,6 +85,13 @@ li {
 .info {
   font-family: Inter, sans-serif;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+label {
+  width: fit-content;
 }
 
 pre {
@@ -139,15 +146,18 @@ div.message {
   white-space: pre;
   position: relative;
   padding-bottom: 3rem;
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow-x: scroll;
 }
 
-.messageTime {
+.message-time {
   font-size: 1rem;
   color: hsl(0, 0%, 90%);
   position: absolute;
   right: 1rem;
   bottom: 1rem;
+}
+
+.message-content {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: scroll;
 }

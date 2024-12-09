@@ -49,10 +49,16 @@ function timePassed(date) {
   return toReturn;
 }
 
+let showUnverified = document.getElementById("show-unverified");
+let showUnknown = document.getElementById("show-unknown");
+let showNotTested = document.getElementById("show-not-tested");
+let showVerified = document.getElementById("show-verified");
+
 async function fetchData() {
   try {
     const response = await fetch("/jsons/messages.json");
     messages = await response.json();
+    messages.reverse();
   } catch (error) {
     console.error("Error:", error);
   }
@@ -64,10 +70,24 @@ async function fetchData() {
     console.error("Error:", error);
   }
 
+  [showUnverified, showUnknown, showNotTested, showVerified].forEach(
+    (element) => {
+      element.addEventListener("change", () => {
+        update();
+      });
+    }
+  );
+
+  update();
+}
+
+function update() {
+  document.getElementById("networks").innerHTML = "";
+  document.getElementById("devices").innerHTML = "";
+  document.getElementById("messages").innerHTML = "";
+
   let networks = {};
   let devices = {};
-
-  messages.reverse();
 
   for (let message in messages) {
     var messageContent = messages[message]["content"];
@@ -82,6 +102,7 @@ async function fetchData() {
     messageDiv.appendChild(messageTitleDiv);
 
     var messageContentDiv = document.createElement("p");
+    messageContentDiv.classList = "message-content";
     messageContentDiv.textContent = "";
 
     for (let network in messageContent["networks"]) {
@@ -129,7 +150,7 @@ async function fetchData() {
 
     var messageTimeDiv = document.createElement("p");
     var time = new Date(messages[message]["time"].replace(/-/g, " "));
-    messageTimeDiv.className = "messageTime";
+    messageTimeDiv.className = "message-time";
     messageTimeDiv.textContent = timePassed(
       messages[message]["time"].replace(/-/g, " ")
     );
@@ -157,30 +178,32 @@ async function fetchData() {
     networkName.classList = "copy";
     networkName.textContent = network;
 
+    var networkStatus = "not-tested";
+
     if (
       networks[network]["passwords"].length === 1 &&
       networks[network]["passwords"][0] == false
     ) {
       networkName.textContent = "⚠️ " + networkName.textContent;
       networkName.classList = "";
-      networkName.title = "Password Unknown/Forgotten";
+      networkName.title = "Password Unknown";
+      networkStatus = "unknown";
     } else if (extra["verified"][network] !== undefined) {
       networkName.innerHTML =
         '✅ <span class="copy">' + networkName.textContent + "</span>";
       networkName.classList = "";
       networkName.title = "Password Verified";
+      networkStatus = "verified";
     } else if (extra["unverified"][network] !== undefined) {
       networkName.textContent = "❌ " + networkName.textContent;
       networkName.classList = "";
       networkName.title = "Password Unverified";
+      networkStatus = "unverified";
     }
 
     networkDiv.appendChild(networkName);
 
-    if (
-      extra["verified"][network] !== undefined &&
-      !networks[network]["passwords"].includes(extra["verified"][network])
-    ) {
+    if (extra["verified"][network] !== undefined) {
       var networkPassword = document.createElement("p");
       networkPassword.classList = "password correct copy";
       networkPassword.textContent = extra["verified"][network];
@@ -188,28 +211,35 @@ async function fetchData() {
     }
 
     for (let password in networks[network]["passwords"]) {
-      var networkPassword = document.createElement("p");
-      if (networks[network]["passwords"][password] !== false) {
-        if (
-          extra["verified"][network] ===
-          networks[network]["passwords"][password]
-        ) {
-          networkPassword.className = "password copy correct";
-        } else if (extra["verified"][network] !== undefined) {
-          networkPassword.className = "password incorrect";
-        } else if (extra["unverified"][network] !== undefined) {
-          networkPassword.className = "password incorrect";
+      if (
+        networks[network]["passwords"][password] !== extra["verified"][network]
+      ) {
+        var networkPassword = document.createElement("p");
+        if (networks[network]["passwords"][password] !== false) {
+          if (extra["verified"][network] !== undefined) {
+            networkPassword.className = "password incorrect";
+          } else if (extra["unverified"][network] !== undefined) {
+            networkPassword.className = "password incorrect";
+          } else {
+            networkPassword.className = "password copy";
+          }
+          networkPassword.textContent =
+            networks[network]["passwords"][password];
         } else {
-          networkPassword.className = "password copy";
+          networkPassword.classList = "password";
+          networkPassword.textContent = "Unknown";
         }
-        networkPassword.textContent = networks[network]["passwords"][password];
-      } else {
-        networkPassword.classList = "password";
-        networkPassword.textContent = "Unknown";
+        networkDiv.appendChild(networkPassword);
       }
-      networkDiv.appendChild(networkPassword);
     }
-    document.getElementById("networks").appendChild(networkDiv);
+    if (
+      (showNotTested.checked && networkStatus === "not-tested") ||
+      (showUnknown.checked && networkStatus === "unknown") ||
+      (showVerified.checked && networkStatus === "verified") ||
+      (showUnverified.checked && networkStatus === "unverified")
+    ) {
+      document.getElementById("networks").appendChild(networkDiv);
+    }
   }
 
   document.getElementById("networks-title").textContent = `Networks (${

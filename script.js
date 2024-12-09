@@ -37,11 +37,11 @@ function timePassed(date) {
   } else if (days >= 1) {
     toReturn = `${days} day${days > 1 ? "s" : ""} ago`;
   } else if (hours >= 1) {
-    toReturn = `${hours} day${hours > 1 ? "s" : ""} ago`;
+    toReturn = `${hours} hour${hours > 1 ? "s" : ""} ago`;
   } else if (minutes >= 1) {
-    toReturn = `${minutes} day${minutes > 1 ? "s" : ""} ago`;
+    toReturn = `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
   } else if (seconds >= 1) {
-    toReturn = `${seconds} day${seconds > 1 ? "s" : ""} ago`;
+    toReturn = `${seconds} second${seconds > 1 ? "s" : ""} ago`;
   } else {
     toReturn = `Now`;
   }

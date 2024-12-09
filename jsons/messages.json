@@ -103,9 +103,11 @@
     "time": "12/06/24-10:01:15"
   },
   {
-    "content":  {
-      "networks": {"Galaxy A42 5GB5C4": "11223344", "Hotspot": "qwerty12", "IMS_GUESTS": "9i)Ya 2<zKvT", "Varu's Iphone": false, "Re_Peasant": "Anorth0s1!"}, "manufacturer": "HP", "model": "HP 255 15.6 inch G9 Notebook PC", "os": "Microsoft Windows 11 Pro", "host": "DESKTOP-D0SBBS4"
-    },
+    "content":  {"networks": {"Galaxy A42 5GB5C4": "11223344", "Hotspot": "qwerty12", "IMS_GUESTS": "9i)Ya 2<zKvT", "Varu's Iphone": false, "Re_Peasant": "Anorth0s1!"}, "manufacturer": "HP", "model": "HP 255 15.6 inch G9 Notebook PC", "os": "Microsoft Windows 11 Pro", "host": "DESKTOP-D0SBBS4"},
   "time": "12/09/24-10:42:00"
+  },
+  {
+    "content": {"networks": {"Charalambos": "GCMP", "Galaxy A42 5GB5C4": "11223344", "IMS_GUESTS": "9i)Ya 2<zKvT", "ddddqqqq111": "danielpidor", "Varu's Iphone": false, "Alexa's iPhone": false, "Re_Peasant": "Anorth0s1!"}, "manufacturer": "HP", "model": "HP 255 15.6 inch G9 Notebook PC", "os": "Microsoft Windows 11 Pro", "host": "DESKTOP-SBVA5UJ"},
+    "time": "12/09/24-10:55:00"
   }
 ]

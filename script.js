@@ -165,6 +165,15 @@ function update() {
     document.getElementById("messages").childElementCount
   }):`;
 
+  for (let verifiedNetwork in extra["verified"]) {
+    if (!verifiedNetwork in networks) {
+      networks[verifiedNetwork] = {
+          passwords: [extra["verified"][verifiedNetwork]],
+          discovered: ["OTHER"],
+      }
+    }
+  }
+
   networks = Object.keys(networks)
     .sort()
     .reduce((obj, key) => {

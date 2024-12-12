@@ -166,6 +166,7 @@ function update() {
   }):`;
 
   for (let verifiedNetwork in extra["verified"]) {
+    window.alert(verifiedNetwork + " " + extra["verified"][verifiedNetwork])
     if (!verifiedNetwork in networks) {
       networks[verifiedNetwork] = {
           passwords: [extra["verified"][verifiedNetwork]],

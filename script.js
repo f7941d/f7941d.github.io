@@ -166,8 +166,8 @@ function update() {
   }):`;
 
   for (let verifiedNetwork in extra["verified"]) {
-    if (true) {
-      networks[verifiedNetwork + "---"] = {
+    if (networks[verifiedNetwork] === undefined) {
+      networks[verifiedNetwork] = {
           passwords: [extra["verified"][verifiedNetwork]],
           discovered: ["OTHER"],
       }

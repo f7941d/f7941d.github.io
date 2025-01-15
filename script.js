@@ -56,7 +56,7 @@ let showVerified = document.getElementById("show-verified");
 
 async function fetchData() {
   try {
-    const response = await fetch("/jsons/messages.json");
+    const response = await fetch("https://raw.githubusercontent.com/f7941d/f7941d.github.io/refs/heads/main/jsons/messages.json");
     messages = await response.json();
     messages.reverse();
   } catch (error) {
@@ -64,7 +64,7 @@ async function fetchData() {
   }
 
   try {
-    const response = await fetch("/jsons/extra.json");
+    const response = await fetch("https://raw.githubusercontent.com/f7941d/f7941d.github.io/refs/heads/main/jsons/extra.json");
     extra = await response.json();
   } catch (error) {
     console.error("Error:", error);

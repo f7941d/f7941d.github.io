@@ -227,7 +227,7 @@ function update() {
         if (networks[network]["passwords"][password] !== false) {
           if (extra["verified"][network] !== undefined) {
             networkPassword.className = "password incorrect";
-          } else if (extra["unverified"][network] == password || (typeof extra["unverified"][network] == "object" && extra["unverified"][network].includes(password))) {
+          } else if (extra["unverified"][network] == networks[network]["passwords"][password] || (typeof extra["unverified"][network] == "object" && extra["unverified"][network].includes(networks[network]["passwords"][password]))) {
             networkPassword.className = "password incorrect";
           } else {
             networkPassword.className = "password copy";

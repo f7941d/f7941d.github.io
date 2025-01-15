@@ -203,7 +203,7 @@ function update() {
       networkName.classList = "";
       networkName.title = "Password Verified";
       networkStatus = "verified";
-    } else if (extra["unverified"][network] !== undefined) {
+    } else if (extra["unverified"][network] !== undefined && networks[network]["passwords"].length == 1) {
       networkName.textContent = "❌ " + networkName.textContent;
       networkName.classList = "";
       networkName.title = "Password Unverified";
@@ -227,7 +227,7 @@ function update() {
         if (networks[network]["passwords"][password] !== false) {
           if (extra["verified"][network] !== undefined) {
             networkPassword.className = "password incorrect";
-          } else if (extra["unverified"][network] !== undefined) {
+          } else if (extra["unverified"][network] == password || (typeof extra["unverified"][network] == "object" && extra["unverified"][network].includes(password))) {
             networkPassword.className = "password incorrect";
           } else {
             networkPassword.className = "password copy";

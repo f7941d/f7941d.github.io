@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="center">
+            <div id="containers">
+                <div class="container">
+                    <h2>Connect:</h2>
+                    <p class="mono">
+                        IP:&nbsp;<input
+                            type="text"
+                            id="ip"
+                            value="127.0.0.1"
+                            placeholder="192.168.1.xyz"
+                        />
+                    </p>
+                    <p class="mono">
+                        Port:&nbsp;<input
+                            type="text"
+                            id="port"
+                            value="3737"
+                            placeholder="3737"
+                        />
+                    </p>
+                </div>
+                <div id="ip-locked">
+                    <div class="container">
+                        <h2>Screen:</h2>
+                        <img
+                            id="screen"
+                            src="/screen"
+                            alt="Failed to load screen feed"
+                        />
+                        <button onclick="connect('screen')">Refresh</button>
+                    </div>
+                    <div class="container">
+                        <h2>Camera:</h2>
+                        <img
+                            id="camera"
+                            src="/camera"
+                            alt="Failed to load camera feed"
+                        />
+                        <button onclick="connect('camera')">Refresh</button>
+                    </div>
+                    <div class="container">
+                        <h2>Send:</h2>
+                        <input
+                            type="text"
+                            id="send-title"
+                            placeholder="title"
+                        />
+                        <input type="text" id="send-text" placeholder="text" />
+                        <div class="buttons">
+                            <button onclick="send('alert')">Alert</button>
+                            <button onclick="send('confirm')">Confirm</button>
+                            <button onclick="send('prompt')">Prompt</button>
+                            <button onclick="send('toast')">Toast</button>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h2>Keyboard:</h2>
+                        <input
+                            type="text"
+                            id="keyboard-text"
+                            placeholder="text / hotkey"
+                        />
+                        <div class="buttons">
+                            <button onclick="keyboard('write')">Write</button>
+                            <button onclick="keyboard('send')">Send</button>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h2>Extra functions:</h2>
+                        <p>
+                            <label>
+                                <input id="forced" type="checkbox" checked />
+                                <span></span>
+                            </label>
+                            forced (ignore open apps)
+                        </p>
+                        <div class="buttons">
+                            <button onclick="shutdown()">Shutdown</button>
+                            <button onclick="restart()">Restart</button>
+                            <button onclick="bsod()">BSOD</button>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h2>Log:</h2>
+                        <div id="log" class="mono"></div>
+                        <p class="mono flex">
+                            $&nbsp;<input
+                                type="text"
+                                id="run"
+                                placeholder="echo hi"
+                            />
+                        </p>
+                    </div>
+                    <div class="container">
+                        <h2>File browser:</h2>
+                        <p class="flex">
+                            Path:&nbsp;
+                            <input
+                                type="text"
+                                id="path"
+                                value="/"
+                                placeholder="C:\"
+                            />
+                        </p>
+                        <div id="files"></div>
+                    </div>
+                    <div class="container">
+                        <h2>Keylog:</h2>
+                        <div id="keylog" class="mono"></div>
+                        <button onclick="keylog()">Refresh</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

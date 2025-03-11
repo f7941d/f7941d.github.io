@@ -150,7 +150,7 @@ button:hover {
     width: 800px;
 }
 
-@media (min-width: calc(800px + 2rem)) {
+@media only screen and (max-width: calc(800px + 2rem)) {
     #containers {
         width: 100%;
     }

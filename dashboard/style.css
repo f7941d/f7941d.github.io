@@ -150,6 +150,12 @@ button:hover {
     width: 800px;
 }
 
+@media (min-width: calc(800px + 2rem)) {
+    #containers {
+        width: 100%;
+    }
+}
+
 .center {
     display: flex;
     flex-direction: column;

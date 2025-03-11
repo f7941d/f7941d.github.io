@@ -290,6 +290,7 @@ function checkIp() {
         ipElement.classList.remove("invalid");
         IP = ip;
         connect();
+        localStorage.setItem("ip", ip);
     } else {
         ipElement.classList.add("invalid");
         ipElement.classList.remove("valid");
@@ -306,12 +307,23 @@ function checkPort() {
         portElement.classList.remove("invalid");
         PORT = port;
         connect();
+        localStorage.setItem("port", port);
     } else {
         portElement.classList.add("invalid");
         portElement.classList.remove("valid");
     }
     ipLockData[1] = valid;
     ipLock();
+}
+
+function keyboard(type) {
+    let text = document.getElementById("keyboard-text").value;
+    let url =
+        `http://${IP}:${PORT}/${type}?` +
+        (type === "send" ? "hotkey" : "text") +
+        `=${encodeURIComponent(text)}`;
+
+    requestGet(url);
 }
 
 let ipElement = document.getElementById("ip");
@@ -321,6 +333,17 @@ let pathElement = document.getElementById("path");
 let forcedElement = document.getElementById("forced");
 let ipLockedElement = document.getElementById("ip-locked");
 let keylogElement = document.getElementById("keylog");
+let forcedTextElement = document.getElementById("forced-text");
+
+if (!localStorage.getItem("ip")) {
+    localStorage.setItem("ip", "127.0.0.1");
+}
+ipElement.value = localStorage.getItem("ip");
+
+if (!localStorage.getItem("port")) {
+    localStorage.setItem("port", "3737");
+}
+portElement.value = localStorage.getItem("port");
 
 let IP = ipElement.value;
 let PORT = portElement.value;
@@ -365,6 +388,10 @@ runElement.addEventListener("keydown", (event) => {
 
 pathElement.addEventListener("input", () => {
     setPath(pathElement.value);
+});
+
+forcedTextElement.addEventListener("click", () => {
+    forcedElement.click();
 });
 
 checkIp();

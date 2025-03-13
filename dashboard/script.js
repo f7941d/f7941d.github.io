@@ -273,6 +273,10 @@ async function keylog() {
         .then((response) => response.json())
         .catch((error) => log(`${error}`, "error"));
 
+    if (!response) {
+        return;
+    }
+
     let lines = response.keylog;
 
     keylogElement.replaceChildren("");
@@ -349,6 +353,10 @@ async function getOptions() {
         .then((response) => response.json())
         .catch((error) => log(`${error}`, "error"));
 
+    if (!response) {
+        return;
+    }
+
     let options = response.options;
 
     optionsElement.replaceChildren("");
@@ -388,8 +396,6 @@ async function getOptions() {
             });
             optionValueElement.appendChild(valueButton);
         }
-
-        console.log(option, value);
 
         optionElement.appendChild(optionNameElement);
         optionElement.appendChild(optionValueElement);

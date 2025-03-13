@@ -119,6 +119,7 @@ button:hover {
 }
 
 #files {
+    margin-top: 0.5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -126,6 +127,10 @@ button:hover {
     flex-grow: 1;
     max-height: 400px;
     overflow-y: scroll;
+}
+
+#files button {
+    margin: 0;
 }
 
 #path {
@@ -196,10 +201,54 @@ input[type="checkbox"]:checked + span {
     background-color: #000;
 }
 
-label span:hover {
+label:hover span {
     background-color: #00000040;
 }
 
-#forced-text {
+label {
     cursor: pointer;
+}
+
+@keyframes statusPulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#status {
+    animation: statusPulse 1s infinite;
+}
+
+.option {
+    margin-top: 0.5rem;
+    border: #000 solid 0.125rem;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    padding-left: 0.5rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.option-value button {
+    margin: 0;
+}
+
+.option-value {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.option-value input {
+    height: fit-content;
 }

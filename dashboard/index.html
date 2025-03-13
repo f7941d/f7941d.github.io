@@ -28,6 +28,7 @@
                             placeholder="3737"
                         />
                     </p>
+                    <p class="mono">Status:&nbsp;<span id="status"></span></p>
                 </div>
                 <div id="ip-locked">
                     <div class="container">
@@ -76,14 +77,16 @@
                         </div>
                     </div>
                     <div class="container">
+                        <h2>Options:</h2>
+                        <div id="options"></div>
+                    </div>
+                    <div class="container">
                         <h2>Extra functions:</h2>
-                        <p id="forced-text">
-                            <label>
-                                <input id="forced" type="checkbox" checked />
-                                <span></span>
-                            </label>
+                        <label>
+                            <input id="forced" type="checkbox" checked />
+                            <span></span>
                             forced (ignore open apps)
-                        </p>
+                        </label>
                         <div class="buttons">
                             <button onclick="shutdown()">Shutdown</button>
                             <button onclick="restart()">Restart</button>
@@ -108,7 +111,7 @@
                             <input
                                 type="text"
                                 id="path"
-                                value="/"
+                                value="C:\"
                                 placeholder="C:\"
                             />
                         </p>

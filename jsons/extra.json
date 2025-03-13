@@ -1,24 +1,24 @@
 {
-  "verified": {
-    "IMS_GUESTS": "9i)Ya+2<zKvT",
-    "Not": "NotPassword",
-    "The People's Socialist Network": "vdur7002",
-    "Galaxy S24+ EB90": "ye96ag2fc9qtft2",
-    "Ahshs": "aaaaaaaa",
-    "Redmi Note 11S": "12345678",
-    "iPhone Alex": "28699999",
-    "IntercontinentalBallisticMissile": "platonwifi",
-    "sourcebin": "webhook?",
-    "Panos' iPhone": "123456789",
-    "ANDREAS2": "1122334455",
-    "Mi 9T": "88888888",
-    "Kir's 12 mini": "wi-fi-Kir",
-    "Davidspot": "Maxmaxmax"
-  },
-  "unverified": {
-    "Rizzmarck Central": "somethingsomething",
-    "Charalambos": "GCMP",
-    "the better jesus christ": "GCMP",
-    "?": "GCMP"
-  }
+    "verified": {
+        "IMS_GUESTS": "9i)Ya+2<zKvT",
+        "Not": "NotPassword",
+        "The People's Socialist Network": "vdur7002",
+        "Galaxy S24+ EB90": "ye96ag2fc9qtft2",
+        "Ahshs": "aaaaaaaa",
+        "Redmi Note 11S": "12345678",
+        "iPhone Alex": "28699999",
+        "IntercontinentalBallisticMissile": "platonwifi",
+        "sourcebin": "webhook?",
+        "Panos' iPhone": "123456789",
+        "ANDREAS2": "1122334455",
+        "Mi 9T": "88888888",
+        "Kir's 12 mini": "wi-fi-Kir",
+        "Davidspot": "Maxmaxmax"
+    },
+    "unverified": {
+        "Rizzmarck Central": "somethingsomething",
+        "Charalambos": "GCMP",
+        "the better jesus christ": "GCMP",
+        "?": "GCMP"
+    }
 }

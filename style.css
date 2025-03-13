@@ -1,163 +1,163 @@
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-  background-color: #0f0f0f;
-  color: #ffffff;
-  font-family: monospace;
-  margin: 2rem;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    font-family: monospace;
+    margin: 2rem;
 }
 
 h1 {
-  font-family: Inter, sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
 }
 
 .boxes-list {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem 0;
-  max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0;
+    max-width: 100%;
 }
 
 .boxes-list div {
-  padding: 1rem;
-  background-color: #1f1f1f;
-  border-radius: 1rem;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  transition: background-color 0.2s;
-  max-width: 100%;
-  box-sizing: border-box;
+    padding: 1rem;
+    background-color: #1f1f1f;
+    border-radius: 1rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 #messages.boxes-list {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .boxes-list div:hover {
-  background-color: #282828;
+    background-color: #282828;
 }
 
 h2 {
-  width: fit-content;
-  word-break: normal;
-  font-weight: 800;
-  font-size: 1.2rem;
+    width: fit-content;
+    word-break: normal;
+    font-weight: 800;
+    font-size: 1.2rem;
 }
 
 p,
 li {
-  width: fit-content;
-  font-weight: 400;
-  font-size: 1rem;
+    width: fit-content;
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 .password {
-  color: hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 90%);
 }
 
 .copy:hover {
-  color: #f7941d;
+    color: #f7941d;
 }
 
 .copy {
-  transition: color 0.2s;
-  cursor: copy;
+    transition: color 0.2s;
+    cursor: copy;
 }
 
 .correct {
-  text-decoration: solid underline #fff;
+    text-decoration: solid underline #fff;
 }
 
 .incorrect {
-  text-decoration: solid line-through #fff;
+    text-decoration: solid line-through #fff;
 }
 
 .info {
-  font-family: Inter, sans-serif;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
+    font-family: Inter, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
 }
 
 input,
 label {
-  width: fit-content;
+    width: fit-content;
 }
 
 pre {
-  cursor: copy;
-  font-size: 1.2rem;
-  padding: 0.5rem 0.75rem;
-  background-color: #1f1f1f;
-  width: fit-content;
-  border-radius: 0.52rem;
-  margin: 0.25rem 0;
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow-x: scroll;
+    cursor: copy;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.75rem;
+    background-color: #1f1f1f;
+    width: fit-content;
+    border-radius: 0.52rem;
+    margin: 0.25rem 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: scroll;
 }
 
 @keyframes copyBanner {
-  0% {
-    opacity: 0;
-    transform: translateX(20rem);
-  }
-  12.5% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  87.5% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(20rem);
-  }
+    0% {
+        opacity: 0;
+        transform: translateX(20rem);
+    }
+    12.5% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    87.5% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(20rem);
+    }
 }
 
 #copy-banner {
-  animation: none;
-  opacity: 0;
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background-color: #1f1f1f;
-  width: fit-content;
-  height: fit-content;
-  font-size: 1.4rem;
-  padding: 0.5rem 0.75rem;
-  font-family: Inter, sans-serif;
-  font-weight: 600;
-  border-radius: 0.5rem;
+    animation: none;
+    opacity: 0;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #1f1f1f;
+    width: fit-content;
+    height: fit-content;
+    font-size: 1.4rem;
+    padding: 0.5rem 0.75rem;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    border-radius: 0.5rem;
 }
 
 div.message {
-  white-space: pre;
-  position: relative;
-  padding-bottom: 3rem;
+    white-space: pre;
+    position: relative;
+    padding-bottom: 3rem;
 }
 
 .message-time {
-  font-size: 1rem;
-  color: hsl(0, 0%, 90%);
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+    font-size: 1rem;
+    color: hsl(0, 0%, 90%);
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
 }
 
 .message-content {
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow-x: scroll;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: scroll;
 }

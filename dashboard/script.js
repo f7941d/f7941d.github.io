@@ -217,7 +217,7 @@ function listFiles(response) {
         let folderElement = document.createElement("button");
         folderElement.setAttribute("onclick", `setPath('${newPath.replaceAll("\\", "\\\\")}')`);
         folderElement.classList.add("folder");
-        folderElement.textContent = "🖿 " + folder;
+        folderElement.textContent = folder + "/";
 
         filesElement.appendChild(folderElement);
     }

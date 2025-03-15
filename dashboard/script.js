@@ -203,7 +203,7 @@ function listFiles(response) {
     let parent = response.parent;
 
     let folderElement = document.createElement("button");
-    folderElement.setAttribute("onclick", `setPath('${parent}')`);
+    folderElement.setAttribute("onclick", `setPath('${parent.replaceAll("\\", "\\\\")}')`);
     folderElement.classList.add("parent-folder");
     folderElement.textContent = "<";
 

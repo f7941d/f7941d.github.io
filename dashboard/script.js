@@ -31,8 +31,6 @@ function connect(type = "both") {
         type = [type];
     }
 
-    let random = `?_=${Date.now()}`;
-
     if (type.includes("screen")) {
         let screen = document.getElementById("screen");
         let parent = screen.parentElement;
@@ -40,7 +38,7 @@ function connect(type = "both") {
 
         screen = document.createElement("img");
         screen.id = "screen";
-        screen.src = `http://${IP}:${PORT}/screen${random}`;
+        screen.src = `http://${IP}:${PORT}/screen`;
         screen.alt = "Failed to load screen feed";
         parent.insertBefore(screen, parent.childNodes[2]);
     }
@@ -52,7 +50,7 @@ function connect(type = "both") {
 
         camera = document.createElement("img");
         camera.id = "camera";
-        camera.src = `http://${IP}:${PORT}/camera${random}`;
+        camera.src = `http://${IP}:${PORT}/camera`;
         camera.alt = "Failed to load camera feed";
         parent.insertBefore(camera, parent.childNodes[2]);
     }

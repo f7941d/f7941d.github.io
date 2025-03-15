@@ -20,7 +20,7 @@ function connect(type = "both") {
     if (type === "both") {
         type = ["camera", "screen"];
         let statusElement = document.getElementById("status");
-        statusElement.textContent = "🟡";
+        statusElement.textContent = "checking...";
 
         checkStatus();
 
@@ -215,7 +215,7 @@ function listFiles(response) {
         let folder = folders[i];
         let newPath = pathJoin(PATH, folder);
         let folderElement = document.createElement("button");
-        folderElement.setAttribute("onclick", `setPath('${newPath}')`);
+        folderElement.setAttribute("onclick", `setPath('${newPath.replaceAll("\\", "\\\\")}')`);
         folderElement.classList.add("folder");
         folderElement.textContent = "🖿 " + folder;
 
@@ -481,9 +481,9 @@ getOptions();
 function setStatus() {
     let statusElement = document.getElementById("status");
     if (ipStatus) {
-        statusElement.textContent = "🟢";
+        statusElement.textContent = "ok";
     } else {
-        statusElement.textContent = "🔴";
+        statusElement.textContent = "failed";
     }
 }
 
@@ -507,6 +507,6 @@ function checkStatus() {
         });
 }
 
-setInterval(checkStatus, 10000);
+setInterval(checkStatus, 15000);
 
 checkStatus();
